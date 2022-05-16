@@ -18,7 +18,7 @@ type client struct {
 }
 
 func (s client) GetRate(from, to string) (float64, error) {
-	rate, err := getCurrencyRate(from, to, s.fetch)
+	rate, err := getRate(from, to, s.fetch)
 	if err != nil {
 		return 0, err
 	}
