@@ -4,11 +4,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"strconv"
 )
 
 const baseURL = "https://api.coingate.com/v2/rates/merchant"
+
+// Debug mode
+// If this variable is set to true, debug mode activated for the package
+var Debug = false
 
 // CoinGate API error responses
 // Response example:
@@ -27,7 +30,9 @@ type Error struct {
 // Arguments are ISO Symbol. Example: EUR, USD, BTC, ETH, etc.
 // See https://developer.coingate.com/docs/get-rate
 func getRate(from, to string, fetch FetchFunction) (float64, error) {
-	log.Printf("Fetching the currency rate for %s\n", to)
+	if Debug {
+		log.Printf("Fetching the currency rate for %s\n", to)
+	}
 
 	var res float64 = 0
 	url := fmt.Sprintf("%s/%s/%s", baseURL, from, to)
