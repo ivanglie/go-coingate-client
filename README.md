@@ -2,6 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/ivanglie/go-coingate-client.svg)](https://pkg.go.dev/github.com/ivanglie/go-coingate-client)
 [![Test](https://github.com/ivanglie/go-coingate-client/actions/workflows/test.yml/badge.svg)](https://github.com/ivanglie/go-coingate-client/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/ivanglie/go-coingate-client/branch/master/graph/badge.svg?token=5TYYZNDBWT)](https://codecov.io/gh/ivanglie/go-coingate-client)
 
 Golang client for the [CoinGate Exchange Rate API](https://developer.coingate.com/docs/get-rate).
 
