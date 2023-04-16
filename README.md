@@ -7,7 +7,11 @@ Golang client for the [CoinGate Exchange Rate API](https://developer.coingate.co
 
 ## Example
 
-First, ensure the library is installed and up to date by running go get -u github.com/ivanglie/go-coingate-client.
+First, ensure the library is installed and up to date by running
+
+```
+go get -u github.com/ivanglie/go-coingate-client
+```
 
 This is a very simple app that just displays US Dollar to Chinese Yuan Renminbi conversion.
 
