@@ -44,6 +44,19 @@ func Test_getRate(t *testing.T) {
 	assert.Error(t, err)
 	assert.Equal(t, float64(0), r)
 
+	// Unmarshal error
+	fetchFunc = func(url string) (resp *http.Response, err error) {
+		return &http.Response{
+			StatusCode: 503,
+			Body:       io.NopCloser(bytes.NewReader([]byte(""))),
+		}, nil
+	}
+
+	r, err = getRate("C1", "C2", fetchFunc)
+	t.Log(err)
+	assert.Error(t, err)
+	assert.Equal(t, float64(0), r)
+
 	// Empty response
 	fetchFunc = func(url string) (resp *http.Response, err error) {
 		return &http.Response{
